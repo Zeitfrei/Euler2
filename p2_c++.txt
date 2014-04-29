@@ -1,0 +1,42 @@
+/*
+* Created by Zeitfrei on 29.04.2014.
+*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> evenfibonacci;
+vector<int>::iterator it;
+int pre, prepre, current, sum;
+
+int main()
+{
+    sum = 0;
+	current = 0;
+	pre = 2;
+	prepre = 1;
+
+	if(prepre % 2 == 0)
+		evenfibonacci.push_back(prepre);
+	if(pre % 2 == 0)
+		evenfibonacci.push_back(pre);
+
+	while (current <= 4000000)
+	{
+		current = prepre+pre;
+		prepre = pre;
+		pre = current;
+
+		if(current % 2 == 0)
+			evenfibonacci.push_back(current);
+	}
+
+	for(it=evenfibonacci.begin(); it<evenfibonacci.end();it++)
+	{
+		sum += *it;
+	}
+
+	cout << "The sum of all the even Fibonacci numbers is: " << sum;
+}

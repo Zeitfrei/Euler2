@@ -22,7 +22,11 @@ current = 0;
 prepre = 1;
 pre = 2;
 
-evenfibancci.add(pre);
+
+if(prepre % 2 == 0)
+	evenfibonacci.add(prepre)
+if(pre % 2 == 0)
+	evenfibonacci.add(pre)
 
 while(current < 4000000)
 {
@@ -33,4 +37,9 @@ while(current < 4000000)
 	if(current % 2 == 0)
 		evenfibonacci.add(current);
 }
+
+
+datastructe:
+java: arraylist
+c++: vector
 
